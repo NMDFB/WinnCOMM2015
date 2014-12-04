@@ -1,0 +1,259 @@
+%	SDR-WinnComm Conference submission LaTeX template
+%	Created by Mike Seery, michael.seery@afit.edu
+%	No copyright; free for use at SDR-WinnComm
+
+\documentclass[letterpaper,10pt,twocolumn]{article} %'draft' and 'final' modes are functional
+\usepackage[english]{babel}
+\usepackage[demo]{graphicx}%Remove "demo" to remove placeholders
+\usepackage{amsmath}
+\usepackage{float}
+
+%BEGIN formatting for winncomm
+	
+    %margins
+    \usepackage[top=1in, bottom=1in, left=0.625in, right=0.625in]{geometry}%0.625 accounts for 1/4" spacing between columns
+    \setlength{\columnsep}{0.25in}
+    
+    %title
+    \usepackage{titling}
+    \pretitle{\noindent\begin{center}\large\bfseries\MakeUppercase}
+	\posttitle{\end{center}\noindent}
+    \setlength{\droptitle}{-4em}     % Eliminate the default vertical space
+	\addtolength{\droptitle}{0.37in}   % Only a guess. Use this for adjustment
+    
+    %% abstract adjustment
+    \usepackage{abstract}
+    \renewcommand{\abstractnamefont}{\normalfont\fontsize{10}{12}\bfseries\MakeUppercase}
+    \renewcommand{\abstracttextfont}{\normalfont\fontsize{10}{12}}
+    \setlength{\absleftindent}{0pt}
+    \setlength{\absrightindent}{0pt}
+    \setlength{\absparindent}{0pt}
+    \setlength{\absparsep}{0pt}
+    
+    %decimal after section numbers    
+    \renewcommand\thesection{\arabic{section}.}
+	\renewcommand\thesubsection{\thesection\arabic{subsection}.}
+	\renewcommand\thesubsubsection{\thesubsection\arabic{subsection}.}
+    
+    %section header spacing
+    \usepackage{titlesec}
+    \titlespacing*{\section}{0pt}{12pt}{10pt}
+    \titlespacing*{\subsection}{0pt}{12pt}{10pt}
+    \titlespacing*{\subsubsection}{0pt}{12pt}{0pt}
+    
+    %section header font and alignment
+    \titleformat{\section}{\center\normalfont\bfseries}{\thesection}{1em}{\MakeUppercase}
+    \titleformat{\subsection}{\normalfont\bfseries}{\thesubsection}{1em}{}
+    \titleformat{\subsubsection}{\normalfont\itshape}{\thesubsubsection}{1em}{}
+    
+    %document font (Times)
+    \usepackage{tgtermes}
+	\usepackage[T1]{fontenc}
+    
+	%captions
+    \usepackage[small]{caption}%font size
+	\floatstyle{plaintop}%tables on top
+	\restylefloat{table}%tables on top
+    
+    %bibliography: remove "--- ---" for ibid.'s
+    \makeatletter
+    \def\bstctlcite{\@ifnextchar[{\@bstctlcite}{\@bstctlcite[@auxout]}}
+    \def\@bstctlcite[#1]#2{\@bsphack
+      \@for\@citeb:=#2\do{%
+        \edef\@citeb{\expandafter\@firstofone\@citeb}%
+        \if@filesw\immediate\write\csname #1\endcsname{\string\citation{\@citeb}}\fi}%
+      \@esphack}
+    \makeatother
+    
+%% END Winncomm formatting
+
+% Title Page
+\title{Title of Paper for SDR-WinnComm}
+
+%\title{Hardware Implementation of Gold's algorithm for Rendezvous in Adaptable FH Cognitive Radio Networks}
+
+\usepackage{authblk}
+\renewcommand\Authfont{\large}
+\renewcommand\Affilfont{\large}
+\author[1]{First Author (first.author@e.mail)}
+\author[1]{Second Author (second.author@e.mail)}
+\author[2]{Other Authors (other.authors@e.mail)}
+\affil[1]{affiliation: company, city, state or province, country}
+\affil[2]{affiliation: company, city, state or province, country}
+
+\date{\vspace{-2em}}%Do not type the date here. This removes the date by inserting negative space.
+
+\begin{document}
+\bstctlcite{biblio:BSTcontrol}%for bibliography control citation
+
+	\maketitle
+    
+    %this removes page numbers
+    \thispagestyle{empty}
+	\pagestyle{empty}
+      
+	\begin{abstract}		 
+     \noindent	%template - leave this
+The abstract should appear at the top of the left-hand column of text, two line spaces below the author/affiliation information. 
+Leave two line spaces between the end of the abstract and the beginning of the main text. 
+The abstract should be approximately 150 words set in Times Roman 10 pt., 6 lines per inch (12 pt. line spacing). 
+All manuscripts must be in English, printed in black ink, and follow the formatting instructions given in these instructions.
+	\bigskip	%template - leave this
+	\end{abstract}    
+
+\section{Introduction}    	
+
+These guidelines include complete descriptions of the fonts, spacing, and related information for producing your proceedings manuscript. 
+Please follow them exactly. 
+If you have any questions, direct them to Stephanie.Hamill@WirelessInnovation.org.
+
+\section{Formatting your Paper}
+
+All papers must be submitted electronically in a Word file or PDF file that includes all figures and tables as well as text. 
+The file name should be the submitting author's last name and initial followed by the .doc or pdf extension (e.g., SmithL.pdf). 
+If the submitting author is first author on more than one paper, add the paper number after the name. 
+
+Paper size must be 8.5 x 11 (U.S. letter size). 
+All printed material, including text, illustrations, and charts, must be kept within a print area of 7 inches (177.8 mm) wide by 9 inches (228.6 mm) high. 
+Do not write or print anything outside the print area. 
+The top margin must be 1 inch (25.4 mm), except for the first page (top of title 
+
+page is 1.37 inches, or 35 mm). 
+The left and right margins of all pages must be 0.75 inch (19 mm). 
+The bottom margin should not be less than 1 inch (25.4 mm) on U.S. letter size paper. 
+
+All text must be in a two-column format as shown. 
+Columns are to be 3.37 inches (85.6 mm) wide, with a 0.25 inch (6.4 mm) space between them. 
+Text must be fully justified. 
+If the last page of your paper is only partially filled, arrange the columns so that they are evenly balanced, if possible (see next page), rather than having one long column. 
+Try to balance the columns on all pages.
+
+\section{Title, Authors, and Affiliations}
+
+The title of the paper (on the first page) should begin 1.37 inches (35 mm) from the top edge of the page. 
+It should be centered, completely capitalized, and in Times Roman 12-point, boldface type (14 pt. vertical spacing between lines if it is more than one line). 
+The authors' name(s) and affiliation(s) should appear one line space below the title in capital and lower case letters, in Times Roman 12 pt. type, centered across the page as shown. 
+No line in the title or author/affiliation may exceed 6 inches (152.4 mm) across. 
+
+\section{Type Style and Fonts}
+
+To achieve the best rendering, please use the Times Roman font. 
+This will give the proceedings a more uniform look. 
+The symbol font may be used for special characters. 
+The first paragraph in each section should not be indented, but all following paragraphs within the section should be indented 0.25 inch (6.4 mm) as the paragraphs in these directions demonstrate.
+
+\section{Main Heading Format}
+
+Main headings (for example, ``1. INTRODUCTION'') should appear in Times Roman 10 pt. 
+bold type in all capital letters, centered in the column, with one blank line above, and one blank line below. 
+Use a period (''.``) after the heading number, not a colon, and no punctuation after the heading. 
+At least two lines of text should follow any heading at the bottom of a page.
+
+%Note that, due to quirks in LaTeX typesetting, spanning images often need to appear significantly earlier in the source than when they are referenced. This figure is referenced in the "figures and tables" section.
+%the asterisk usage of the figure environment is non-standard, and undocumented, but is the community-accepted method of creating spanning figures.
+           \begin{figure*}[htb]
+	 			\centering
+	 			\includegraphics[width=0.9\textwidth]{demo}
+	 			\caption{Sample spanning image.}
+                \label{fig:spanning}
+			\end{figure*}
+            
+\subsection{Subhead Format}
+
+Subheads should appear in upper- and lower-case Times Roman 10 pt. bold type (see subhead above). 
+They should start at the left margin on a separate line with a line space above and below. 
+The first line of text following a subhead should not be indented, but following paragraphs should be indented 0.25 inch (6 mm).
+
+\subsubsection{Sub-subhead Format}
+
+Sub-subheads are discouraged. 
+However, if you must use them, they should appear in upper- and lower-case Times Roman 10 pt. italics (see sub-subhead above). 
+They should start at the left margin on a separate line, with one line space above and text beginning flush left on the following line. 
+
+\section{Figures and Tables}
+
+All figures and tables must appear within the designated margins. An example figure is shown in Figure~\ref{fig:inline}. An example table is shown in Table~\ref{tab:sample}.
+
+			\begin{figure}[th]
+	 			\centering
+	 			\includegraphics[width=.45\textwidth]{demo}
+                \caption{Sample inline image.}
+                \label{fig:inline}
+			\end{figure} 
+            
+            
+            \begin{table}[ht]
+            	\caption{Sample table.}
+                \label{tab:sample}
+                \center
+                \begin{tabular}{|l|l|}
+                  \hline
+                  $z_4 z_5$ & $z_1,z_2,z_3,z_4,z_5,z_6,z_7,z_8,z_9,z_{10}$ \\ \hline
+                  0 0     & 0, 0, 0, 0, 0, 0, 0, 0, 0, 0                        \\ \hline
+                  0 1     & 1, 1, 0, 0, 1, 1, 0, 1, 1, 1                        \\ \hline
+                \end{tabular}
+            \end{table}
+
+They may span the two columns. 
+If possible, position illustrations at the top of columns, rather than in the middle or at the bottom. 
+An example spanning figure is shown in Figure~\ref{fig:spanning}. 
+% Note that this appears significantly earlier in the document source, under the "Main heading format" section". 
+% Spanning tables are created by the same asterisk method as figures. Use \begin{table*}, and place the table definition a few sections early in the source.
+
+        
+Number every illustration or table, starting with 1, and give it a caption. 
+Captions may be in 9 pt. type with 10 pt. line spacing and should appear above a table or beneath a figure. 
+Figures should be may be plain or framed with a 1 px border. 
+
+
+\section{Footnotes}
+
+The use of footnotes is discouraged. 
+To help your readers, avoid using footnotes altogether and include necessary peripheral observations in the text (within parentheses, if you prefer, as in this sentence). 
+When necessary, place footnotes at the bottom of the column on the page on which they are referenced. 
+Use Times Roman 9-point type with 10 pt. line spacing\footnote{This is an example footnote.}. 
+
+
+\section{Page Numbering}
+
+Please do not paginate your paper. 
+Page numbers, session numbers, and conference identification will be inserted when the paper is included in the proceedings. 
+When you submit your paper, check the box transferring copyright to the Forum so that we may include it in the proceedings.
+
+\section{Page Limit: Ten Pages}
+
+Please do not exceed the ten-page limit for papers.
+
+\section{References}
+
+The references in the text should be numbered in order of appearance. 
+When referring to them in the text, type the corresponding reference number in square brackets, as shown at the end of this sentence\cite{Nobody06}. 
+If the same reference is used more than once in the text, refer to it in later text by the first reference number. 
+List all bibliographical references by consecutive numbers at the end of the paper in Times Roman 9 pt. type with 10 pt. line spacing. 
+Note that the references in the list hang indent by .25 inch (6 mm) and there is no line spacing between them. 
+Use authors’ initials and last names, and cite the article or book according to the sample references shown below.
+
+
+
+
+
+
+
+
+
+ 
+
+
+%\todo[inline]{first line of each section is indented... fix it}
+
+%\newpage
+%
+{\small
+\bibliography{biblio}
+% if `bib-example' is the name of
+% your bib file
+\bibliographystyle{IEEEtran}
+% try changing to abbrvnat
+}
+    	
+\end{document}
